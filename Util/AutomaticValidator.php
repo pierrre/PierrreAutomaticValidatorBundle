@@ -4,7 +4,7 @@ namespace Pierrre\AutomaticValidatorBundle\Util;
 
 use Symfony\Component\Validator\Validator;
 
-use Vaeja\Bundle\Core\Exception\EntityValidationException;
+use Pierrre\AutomaticValidatorBundle\Exception\EntityValidationException;
 
 class AutomaticValidator{
 	/**
