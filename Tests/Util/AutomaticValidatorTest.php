@@ -30,12 +30,10 @@ class AutomaticValidatorTest extends \PHPUnit_Framework_TestCase{
 		$validator = $this->getMock('Symfony\Component\Validator\ValidatorInterface');
 		$validator->expects($this->once())
 				->method('validate')
-				//->with($entity)
+				->with($entity)
 				->will($this->returnValue($violationList));
 		
 		$automaticValidator = new AutomaticValidator($validator);
-		
-		
 		
 		$automaticValidator->validate($entity);
 	}
@@ -50,12 +48,13 @@ class AutomaticValidatorTest extends \PHPUnit_Framework_TestCase{
 		
 		$violation = new ConstraintViolation('Invalid', array(), 'entity', 'property', 'invalid');
 		
-		$violationList = new ConstraintViolationList(array($violation));
+		$violationList = new ConstraintViolationList();
+		$violationList->add($violation);
 		
 		$validator = $this->getMock('Symfony\Component\Validator\ValidatorInterface');
 		$validator->expects($this->once())
 				->method('validate')
-				//->with($entity)
+				->with($entity)
 				->will($this->returnValue($violationList));
 		
 		$automaticValidator = new AutomaticValidator($validator);
