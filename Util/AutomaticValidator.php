@@ -2,25 +2,25 @@
 
 namespace Pierrre\AutomaticValidatorBundle\Util;
 
-use Symfony\Component\Validator\Validator;
-
 use Pierrre\AutomaticValidatorBundle\Exception\EntityValidationException;
+
+use Symfony\Component\Validator\ValidatorInterface;
 
 class AutomaticValidator{
 	/**
-	 * @var Symfony\Component\Validator\Validator
+	 * @var Symfony\Component\Validator\ValidatorInterface
 	 */
 	private $validator;
 	
 	/**
-	 * @param Symfony\Component\Validator\Validator $validator
+	 * @param Symfony\Component\Validator\ValidatorInterface $validator
 	 */
-	public function __construct(Validator $validator){
+	public function __construct(ValidatorInterface $validator){
 		$this->validator = $validator;
 	}
 	
 	/**
-	 * @param Doctrine\ORM\Event\LifecycleEventArgs $args
+	 * @param object $entity
 	 * @throws Pierrre\AutomaticValidatorBundle\Exception\EntityValidationException
 	 */
 	public function validate($entity){
