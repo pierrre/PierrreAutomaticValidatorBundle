@@ -34,7 +34,7 @@ class EntityValidationExceptionTest extends \PHPUnit_Framework_TestCase{
 		$exception = $this->getException();
 		$violations = $exception->getViolations();
 	
-		$this->assertInstanceOf('Symfony\Component\Validator\ConstraintViolationList', $exception);
+		$this->assertInstanceOf('Symfony\Component\Validator\ConstraintViolationList', $violations);
 	}
 	
 	private function getException(){
