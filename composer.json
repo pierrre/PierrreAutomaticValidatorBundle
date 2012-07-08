@@ -1,0 +1,26 @@
+{
+    "name": "pierrre/automatic-validator-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Pierrre Automatic Validator Bundle",
+    "keywords": ["pierrre", "automatic", "validator", "doctrine", "orm", "odm", "symfony"],
+    "homepage": "http://github.com/pierrre/PierrreAutomaticValidatorBundle",
+    "authors": [
+        {"name": "Pierre Durand", "email": "pierredurand@gmail.com"}
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "*",
+        "symfony/validator": "*"
+    },
+    "suggest": {
+        "doctrine/doctrine-bundle": "Doctrine ORM Bundle",
+        "doctrine/mongodb-odm-bundle": "Doctrine MongoDB ODM Bundle"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Pierrre\\AutomaticValidatorBundle": ""
+        }
+    },
+    "target-dir" : "Pierrre/AutomaticValidatorBundle"
+}

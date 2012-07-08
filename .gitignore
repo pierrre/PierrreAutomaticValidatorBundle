@@ -2,8 +2,9 @@
 /Tests/coverage
 
 #Vendors
-/vendor/*
-!/vendor/vendors.php
+/composer.lock
+/composer.phar
+/vendor
 
 #Mac OS X
 .DS_Store

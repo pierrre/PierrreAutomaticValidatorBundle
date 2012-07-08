@@ -3,7 +3,7 @@
 <phpunit
 	bootstrap="Tests/bootstrap.php"
 	colors="true">
-
+	
 	<testsuites>
 		<testsuite name="PierrreAutomaticValidatorBundle test suite">
 			<directory>Tests</directory>
@@ -14,9 +14,9 @@
 		<whitelist>
 			<directory>.</directory>
 			<exclude>
-				<directory>Resources</directory>
-				<directory>Tests</directory>
-				<directory>vendor</directory>
+				<directory>./Resources</directory>
+				<directory>./Tests</directory>
+				<directory>./vendor</directory>
 			</exclude>
 		</whitelist>
 	</filter>
