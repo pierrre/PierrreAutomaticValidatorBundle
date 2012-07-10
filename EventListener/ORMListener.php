@@ -7,7 +7,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 
 use Pierrre\AutomaticValidatorBundle\Util\AutomaticValidator;
 
-class DoctrineListener{
+class ORMListener{
 	/**
 	 * @var Pierrre\AutomaticValidatorBundle\Util\AutomaticValidator
 	 */

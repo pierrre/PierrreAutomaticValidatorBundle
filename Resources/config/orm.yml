@@ -1,7 +1,7 @@
 services:
 
-    pierrre_automatic_validator.doctrine_listener:
-        class: Pierrre\AutomaticValidatorBundle\EventListener\DoctrineListener
+    pierrre_automatic_validator.orm_listener:
+        class: Pierrre\AutomaticValidatorBundle\EventListener\ORMListener
         arguments: ["@pierrre_automatic_validator.automatic_validator"]
         tags:
             - { name: doctrine.event_listener, event: prePersist }
