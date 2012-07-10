@@ -16,6 +16,9 @@ class PierrreAutomaticValidatorExtension extends Extension {
 		$loader->load('services.yml');
 		
 		$config = $this->processConfiguration(new Configuration(), $configs);
-		$alias = $this->getAlias();
+		
+		if($config['orm']) {
+			$loader->load('orm.yml');
+		}
 	}
 }

@@ -11,9 +11,15 @@ class Configuration implements ConfigurationInterface {
 	 */
 	public function getConfigTreeBuilder(){
 		$treeBuilder = new TreeBuilder();
+		$rootnode = $treeBuilder->root('pierrre_automatic_validator');
 		
-		$treeBuilder->root('pierrre_automatic_validator')
-		;
+		$rootnode
+			->children()
+				->scalarNode('orm')
+					->defaultValue(false)
+				->end()
+			->end()
+		->end();
 		
 		return $treeBuilder;
 	}

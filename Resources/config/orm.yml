@@ -1,0 +1,8 @@
+services:
+
+    pierrre_automatic_validator.doctrine_listener:
+        class: Pierrre\AutomaticValidatorBundle\EventListener\DoctrineListener
+        arguments: ["@pierrre_automatic_validator.automatic_validator"]
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
