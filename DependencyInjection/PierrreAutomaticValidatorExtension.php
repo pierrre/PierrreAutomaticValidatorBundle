@@ -20,5 +20,9 @@ class PierrreAutomaticValidatorExtension extends Extension {
 		if($config['orm']) {
 			$loader->load('orm.yml');
 		}
+		
+		if($config['mongodb']) {
+			$loader->load('mongodb.yml');
+		}
 	}
 }

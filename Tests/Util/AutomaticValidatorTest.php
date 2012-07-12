@@ -39,7 +39,7 @@ class AutomaticValidatorTest extends \PHPUnit_Framework_TestCase{
 	}
 	
 	/**
-	 * @expectedException Pierrre\AutomaticValidatorBundle\Exception\EntityValidationException
+	 * @expectedException Pierrre\AutomaticValidatorBundle\Exception\ValidationException
 	 * 
 	 * @covers Pierrre\AutomaticValidatorBundle\Util\AutomaticValidator::validate
 	 */

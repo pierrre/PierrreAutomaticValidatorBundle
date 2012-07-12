@@ -18,6 +18,9 @@ class Configuration implements ConfigurationInterface {
 				->scalarNode('orm')
 					->defaultValue(false)
 				->end()
+				->scalarNode('mongodb')
+					->defaultValue(false)
+				->end()
 			->end()
 		->end();
 		

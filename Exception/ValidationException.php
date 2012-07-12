@@ -6,8 +6,8 @@ use \Exception;
 
 use Symfony\Component\Validator\ConstraintViolationList;
 
-class EntityValidationException extends Exception{
-	private $entity;
+class ValidationException extends Exception{
+	private $object;
 
 	/**
 	 * @var Symfony\Component\Validator\ConstraintViolationList
@@ -15,21 +15,21 @@ class EntityValidationException extends Exception{
 	private $violations;
 
 	/**
-	 * @param object $entity
+	 * @param object $object
 	 * @param Symfony\Component\Validator\ConstraintViolationList $violations
 	 */
-	public function __construct($entity, ConstraintViolationList $violations){
-		$this->entity = $entity;
+	public function __construct($object, ConstraintViolationList $violations){
+		$this->object = $object;
 		$this->violations = $violations;
 
-		parent::__construct("Entity validation error:\n" . $this->violations);
+		parent::__construct("Validation error:\n" . $this->violations);
 	}
 
 	/**
 	 * @return object
 	 */
-	public function getEntity(){
-		return $this->entity;
+	public function getObject(){
+		return $this->object;
 	}
 
 	/**

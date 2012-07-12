@@ -18,16 +18,16 @@ class ORMListener{
 	}
 	
 	/**
-	 * @param Doctrine\ORM\Event\LifecycleEventArgs $args
+	 * @param Doctrine\ORM\Event\LifecycleEventArgs $eventArgs
 	 */
-	public function prePersist(LifecycleEventArgs $args){
-		$this->automaticValidator->validate($args->getEntity());
+	public function prePersist(LifecycleEventArgs $eventArgs){
+		$this->automaticValidator->validate($eventArgs->getEntity());
 	}
 	
 	/**
 	 * @param Doctrine\ORM\Event\LifecycleEventArgs $args
 	 */
-	public function preUpdate(LifecycleEventArgs $args){
-		$this->automaticValidator->validate($args->getEntity());
+	public function preUpdate(LifecycleEventArgs $eventArgs){
+		$this->automaticValidator->validate($eventArgs->getEntity());
 	}
 }

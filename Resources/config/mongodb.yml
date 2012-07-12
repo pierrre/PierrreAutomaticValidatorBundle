@@ -1,0 +1,8 @@
+services:
+
+    pierrre_automatic_validator.mongodb_listener:
+        class: Pierrre\AutomaticValidatorBundle\EventListener\MongoDBListener
+        arguments: ["@pierrre_automatic_validator.automatic_validator"]
+        tags:
+            - { name: doctrine.odm.mongodb.event_listener, event: prePersist }
+            - { name: doctrine.odm.mongodb.event_listener, event: preUpdate }
