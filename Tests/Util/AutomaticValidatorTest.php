@@ -12,9 +12,9 @@ class AutomaticValidatorTest extends \PHPUnit_Framework_TestCase{
 	 * @covers Pierrre\AutomaticValidatorBundle\Util\AutomaticValidator::__construct
 	 */
 	public function testContruct(){
-		$validator = $this->getMock('Symfony\Component\Validator\ValidatorInterface');
+		$container = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
 		
-		$automaticValidator = new AutomaticValidator($validator);
+		$automaticValidator = new AutomaticValidator($container);
 		
 		$this->assertInstanceOf('Pierrre\AutomaticValidatorBundle\Util\AutomaticValidator', $automaticValidator);
 	}
@@ -33,7 +33,13 @@ class AutomaticValidatorTest extends \PHPUnit_Framework_TestCase{
 				->with($entity)
 				->will($this->returnValue($violationList));
 		
-		$automaticValidator = new AutomaticValidator($validator);
+		$container = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
+		$container->expects($this->once())
+				->method('get')
+				->with('validator')
+				->will($this->returnValue($validator));
+		
+		$automaticValidator = new AutomaticValidator($container);
 		
 		$automaticValidator->validate($entity);
 	}
@@ -57,7 +63,13 @@ class AutomaticValidatorTest extends \PHPUnit_Framework_TestCase{
 				->with($entity)
 				->will($this->returnValue($violationList));
 		
-		$automaticValidator = new AutomaticValidator($validator);
+		$container = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
+		$container->expects($this->once())
+				->method('get')
+				->with('validator')
+				->will($this->returnValue($validator));
+		
+		$automaticValidator = new AutomaticValidator($container);
 		
 		$automaticValidator->validate($entity);
 	}

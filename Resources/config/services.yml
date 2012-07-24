@@ -2,4 +2,4 @@ services:
 
     pierrre_automatic_validator.automatic_validator:
         class: Pierrre\AutomaticValidatorBundle\Util\AutomaticValidator
-        arguments: ["@validator"]
+        arguments: ["@service_container"]
