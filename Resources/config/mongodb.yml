@@ -4,5 +4,4 @@ services:
         class: Pierrre\AutomaticValidatorBundle\EventListener\MongoDBListener
         arguments: ["@pierrre_automatic_validator.automatic_validator"]
         tags:
-            - { name: doctrine_mongodb.odm.event_listener, event: prePersist }
-            - { name: doctrine_mongodb.odm.event_listener, event: preUpdate }
+            - { name: doctrine_mongodb.odm.event_subscriber, priority: -128 }
